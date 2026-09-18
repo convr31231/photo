@@ -1,0 +1,150 @@
+.section {
+  background:
+    linear-gradient(180deg, var(--bg-elevated), var(--bg-warm));
+}
+
+.head {
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+  max-width: 28rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem 1.5rem;
+}
+
+.cardBtn {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.image {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 1rem;
+  background: var(--bg-sand);
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s var(--ease);
+}
+
+.cardBtn:hover .image img {
+  transform: scale(1.05);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.65rem;
+}
+
+.card h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.55rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(22, 20, 18, 0.7);
+}
+
+.article {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 680px);
+  max-height: 90vh;
+  overflow: auto;
+  background: var(--bg-elevated);
+  padding: 1.5rem;
+}
+
+.close {
+  position: sticky;
+  top: 0;
+  float: right;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  background: var(--bg-elevated);
+  min-height: 2.5rem;
+}
+
+.article img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin-bottom: 1.25rem;
+}
+
+.articleMeta {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.75rem;
+}
+
+.article h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 400;
+  margin-bottom: 1.25rem;
+}
+
+.article p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 0.9rem;
+}
+
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .grid > :first-child {
+    grid-row: span 2;
+  }
+
+  .grid > :first-child .image {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+@media (min-width: 1100px) {
+  .grid {
+    grid-template-columns: 1.3fr 1fr 1fr;
+  }
+
+  .grid > :first-child {
+    grid-row: span 2;
+  }
+}

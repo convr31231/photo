@@ -1,0 +1,124 @@
+.section {
+  background:
+    radial-gradient(ellipse at 90% 10%, rgba(196, 176, 154, 0.22), transparent 40%),
+    var(--bg-elevated);
+}
+
+.grid {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.note {
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.priceList {
+  display: flex;
+  flex-direction: column;
+}
+
+.priceList li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.15rem;
+  border-top: 1px solid var(--line);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.priceList li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.priceList strong {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.calc {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.calc h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.calcLead {
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.fieldset {
+  border: none;
+  margin: 0 0 1.35rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.fieldset legend {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.6rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--line);
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.option:has(input:checked) {
+  border-color: var(--text);
+  background: rgba(28, 25, 22, 0.04);
+}
+
+.option input {
+  accent-color: var(--text);
+}
+
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.result p {
+  color: var(--text-muted);
+}
+
+.result strong {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 400;
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr 1.05fr;
+    align-items: start;
+  }
+}

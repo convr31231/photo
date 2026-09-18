@@ -1,0 +1,67 @@
+.section {
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.section :global(.eyebrow) {
+  color: var(--accent-soft);
+  margin-bottom: 2rem;
+}
+
+.slider {
+  max-width: 52rem;
+}
+
+.quote {
+  margin: 0;
+}
+
+.quote p {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 6vw, 4.4rem);
+  line-height: 1.12;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.quote footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.quote cite {
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.quote span {
+  color: rgba(246, 242, 235, 0.55);
+  font-size: 0.9rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.nav button {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--line-on-dark);
+  color: var(--text-on-dark);
+  font-size: 1.1rem;
+}
+
+.nav span {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  color: rgba(246, 242, 235, 0.55);
+}

@@ -1,0 +1,267 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(22, 20, 18, 0.72);
+}
+
+.panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 720px);
+  max-height: min(92vh, 900px);
+  overflow: auto;
+  background: var(--bg-elevated);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.4rem;
+}
+
+.top h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 400;
+}
+
+.close {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  min-height: 2.75rem;
+}
+
+.progress {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.progress li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.progress li span {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+}
+
+.current {
+  color: var(--text) !important;
+  border-color: var(--text) !important;
+}
+
+.done {
+  color: var(--accent) !important;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.step {
+  min-height: 220px;
+}
+
+.rooms {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.room {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  border: 1px solid var(--line);
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.25s ease;
+}
+
+.room input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.room img {
+  width: 88px;
+  height: 72px;
+  object-fit: cover;
+}
+
+.room strong {
+  display: block;
+  letter-spacing: 0.08em;
+}
+
+.room em {
+  font-style: normal;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.selected {
+  border-color: var(--text) !important;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.field label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.field input {
+  min-height: 3rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line-strong);
+  background: var(--bg);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stack fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stack legend {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 0.65rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chip {
+  min-height: 2.6rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  font-size: 0.88rem;
+}
+
+.chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.summary strong {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.actions button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.success {
+  text-align: center;
+  padding: 2rem 0.5rem 1rem;
+}
+
+.success h3 {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.success p {
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.section {
+  background: var(--bg-warm);
+}
+
+.teaser {
+  max-width: 40rem;
+}
+
+.teaser .lead {
+  margin: 1.25rem 0 1.75rem;
+}
+
+@media (min-width: 700px) {
+  .progress {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .rooms {
+    grid-template-columns: 1fr 1fr;
+  }
+}

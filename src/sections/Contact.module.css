@@ -1,0 +1,102 @@
+.section {
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(196, 176, 154, 0.25), transparent 50%),
+    var(--bg);
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+}
+
+.cta {
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+  max-width: 48rem;
+}
+
+.btn {
+  margin-top: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.info ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.info li {
+  display: grid;
+  gap: 0.35rem;
+  padding-block: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.info li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.info span {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.info a,
+.info p {
+  font-size: 1.05rem;
+}
+
+.info a:hover {
+  color: var(--accent);
+}
+
+.mapVisual {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 11;
+  background: var(--bg-sand);
+}
+
+.mapVisual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05) brightness(0.9);
+  opacity: 0.85;
+}
+
+.mapOverlay {
+  position: absolute;
+  inset: auto 1.25rem 1.25rem 1.25rem;
+  background: rgba(246, 242, 235, 0.92);
+  padding: 1rem 1.1rem;
+  max-width: 20rem;
+}
+
+.pin {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-bottom: 0.65rem;
+}
+
+.mapOverlay p:first-of-type {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.mapOverlay p:last-child {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: stretch;
+  }
+}

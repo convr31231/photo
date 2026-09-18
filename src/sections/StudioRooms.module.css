@@ -1,0 +1,159 @@
+.section {
+  background: var(--bg-elevated);
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.controls {
+  display: none;
+  gap: 0.5rem;
+}
+
+.controls button {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--line-strong);
+  font-size: 1.1rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.controls button:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.trackWrap {
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 max(1.25rem, calc((100vw - var(--max)) / 2 + 1.25rem));
+  padding-bottom: 1.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.card {
+  flex: 0 0 min(86vw, 420px);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.imageWrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--bg-sand);
+}
+
+.imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease);
+}
+
+.card:hover .imageWrap img {
+  transform: scale(1.08);
+}
+
+.index {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--text-on-dark);
+  mix-blend-mode: difference;
+}
+
+.body h3 {
+  font-family: var(--font-sans);
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.65rem;
+}
+
+.body > p {
+  color: var(--text-muted);
+  margin-bottom: 1.1rem;
+  line-height: 1.6;
+}
+
+.body dl {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.body dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.88rem;
+}
+
+.body dt {
+  color: var(--text-soft);
+}
+
+.body dd {
+  margin: 0;
+  text-align: right;
+}
+
+.equip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.equip li {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.15rem;
+}
+
+@media (min-width: 900px) {
+  .controls {
+    display: flex;
+  }
+
+  .card {
+    flex-basis: 460px;
+  }
+}
+
+@media (max-width: 768px) {
+  .track {
+    flex-direction: column;
+    overflow: visible;
+    scroll-snap-type: none;
+    padding-inline: 1.5rem;
+  }
+
+  .card {
+    flex-basis: auto;
+    width: 100%;
+  }
+}

@@ -1,0 +1,59 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: difference;
+  transition: opacity 0.25s ease;
+  will-change: transform;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: #f6f2eb;
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1), height 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    margin 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.35s ease;
+}
+
+.expanded .dot {
+  width: 88px;
+  height: 88px;
+  margin: -44px 0 0 -44px;
+  background: rgba(246, 242, 235, 0.92);
+  mix-blend-mode: normal;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: #1c1916;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.25s ease 0.05s;
+}
+
+.expanded .label {
+  opacity: 1;
+}
+
+.expanded {
+  mix-blend-mode: normal;
+}
